@@ -1,0 +1,165 @@
+#twc-widget-root {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99999;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.twc-bubble {
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(15, 118, 110, 0.28);
+}
+
+.twc-panel {
+  position: absolute;
+  right: 0;
+  bottom: 72px;
+  width: min(360px, calc(100vw - 32px));
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+}
+
+.twc-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #134e4a, #0f766e);
+}
+
+.twc-header strong,
+.twc-header span {
+  display: block;
+}
+
+.twc-header span {
+  margin-top: 4px;
+  font-size: 13px;
+  opacity: 0.88;
+}
+
+.twc-close {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.twc-body {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.twc-intro p {
+  margin: 0 0 10px;
+  color: #334155;
+}
+
+.twc-phone {
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.twc-lead-form,
+.twc-message-form {
+  display: grid;
+  gap: 12px;
+}
+
+.twc-lead-form label,
+.twc-message-form textarea {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.twc-lead-form input,
+.twc-message-form textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.twc-lead-form button,
+.twc-message-form button {
+  border: 0;
+  border-radius: 12px;
+  background: #0f766e;
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.twc-status {
+  border-radius: 14px;
+  background: #ecfeff;
+  color: #155e75;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.twc-messages {
+  display: grid;
+  gap: 10px;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.twc-message {
+  display: flex;
+}
+
+.twc-message span {
+  max-width: 85%;
+  border-radius: 16px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.twc-message-visitor {
+  justify-content: flex-end;
+}
+
+.twc-message-visitor span {
+  background: #0f766e;
+  color: #fff;
+}
+
+.twc-message-admin span,
+.twc-message-system span {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  #twc-widget-root {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .twc-panel {
+    bottom: 64px;
+  }
+}
