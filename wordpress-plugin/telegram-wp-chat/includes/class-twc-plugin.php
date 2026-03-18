@@ -81,6 +81,7 @@ class TWC_Plugin {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		add_action( 'wp_footer', array( $this, 'render_widget' ) );
 		add_action( 'rest_api_init', array( $this, 'register_rest_routes' ) );
+		add_shortcode( 'twc_open_chat', array( $this, 'render_open_chat_shortcode' ) );
 	}
 
 	public function register_admin_menu() {
@@ -260,6 +261,25 @@ class TWC_Plugin {
 		?>
 		<div id="twc-widget-root"></div>
 		<?php
+	}
+
+	public function render_open_chat_shortcode( $atts ) {
+		$atts = shortcode_atts(
+			array(
+				'label' => 'Abrir chat',
+				'class' => '',
+			),
+			$atts,
+			'twc_open_chat'
+		);
+
+		$classes = trim( 'twc-open-chat-button ' . $atts['class'] );
+
+		return sprintf(
+			'<button type="button" class="%1$s" data-twc-open-chat="1">%2$s</button>',
+			esc_attr( $classes ),
+			esc_html( $atts['label'] )
+		);
 	}
 
 	public function register_rest_routes() {

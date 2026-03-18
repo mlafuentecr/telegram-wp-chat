@@ -18,6 +18,19 @@
   box-shadow: 0 16px 40px rgba(15, 118, 110, 0.28);
 }
 
+.twc-open-chat-button {
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #fff;
+  padding: 14px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(15, 118, 110, 0.22);
+}
+
 .twc-panel {
   position: absolute;
   right: 0;

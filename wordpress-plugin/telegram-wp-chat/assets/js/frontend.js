@@ -65,6 +65,17 @@
     syncVisibility();
   });
 
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-twc-open-chat]");
+
+    if (!trigger) {
+      return;
+    }
+
+    event.preventDefault();
+    openChat();
+  });
+
   leadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(leadForm);
@@ -119,6 +130,12 @@
   function syncVisibility() {
     panel.hidden = !state.open;
     bubble.setAttribute("aria-expanded", state.open ? "true" : "false");
+  }
+
+  function openChat() {
+    state.open = true;
+    syncVisibility();
+    statusBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
   function setStatus(text) {

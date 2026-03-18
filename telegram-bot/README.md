@@ -2,6 +2,12 @@
 
 Esta carpeta contiene lo necesario para preparar el bot de Telegram que usa el plugin de WordPress.
 
+El plugin de WordPress vive aparte en:
+
+```text
+../wordpress-plugin/telegram-wp-chat
+```
+
 ## Contenido
 
 - `.env.example`: variables base para el bot.
